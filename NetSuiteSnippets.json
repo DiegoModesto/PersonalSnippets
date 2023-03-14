@@ -1,5 +1,21 @@
 //https://snippet-generator.app
 {
+	"Inject modules to NetSuite": {
+		"prefix": "nsInject",
+		"body": [
+			"var record = null, search = null, query = null, format = null, http = null, https = null, runtime = null; urlmod = null",
+			"require(['N/record', 'N/search', 'N/query', 'N/format', 'N/http', 'N/https', 'N/runtime', 'N/url'], (a,b,c,d,e,f,g,h) => {",
+			"    record = a;",
+			"    search = b;",
+			"    query = c;",
+			"    format = d;",
+			"    http = e;",
+			"    https = f;",
+			"    runtime = g;",
+			"    urlmod = h;",
+			"})"
+		]
+	},
 	"Import Custom": {
 		"scope": "typescript",
 		"prefix": "tsImportCustom",
