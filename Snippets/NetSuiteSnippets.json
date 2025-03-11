@@ -78,19 +78,25 @@
 		"scope": "typescript",
 		"prefix": "tsModule",
 		"body": [
-			"export let execute = () : string => {",
-			"    return ''",
-			"}"
-		],
+			"export function execute() : void => {}"
+		]
 	},
 	"Módulo Básico NetSuite - JavaScript": {
 		"scope": "javascript",
 		"prefix": "nsModule",
 		"body": [
-			"export let execute = () => {",
+			"/**",
+			" *@NApiVersion 2.1",
+			" */",
+			" define([], function () {",
+			" ",
+			"      function execute() {}",
 			"",
-			"}"
-		],
+			"      return {",
+			"            execute",
+			"      }",
+			"})"
+		]
 	},
 	"ScheduleScript NetSuite - Javascript": {
 		"scope": "javascript",
@@ -108,8 +114,7 @@
 			"        execute",
 			"    }",
 			"})"
-		],
-		"description": ""
+		]
 	},
 	"ScheduleScript NetSuite - TypeScript": {
 		"scope": "typescript",
@@ -127,8 +132,7 @@
 			"type executeContext = EntryPoints.ScheduledScript.executeContext",
 			"",
 			"export let execute: execute = (context: executeContext) => {}"
-		],
-		"description": ""
+		]
 	},
 	"ClientScript NetSuite - TypeScript": {
 		"scope": "typescript",
@@ -174,7 +178,7 @@
 			"export let validateInsert: validateInsert = (context: validateInsertContext) => { return true }",
 			"export let validateLine: validateLine = (context: validateLineContext) => { return true }",
 			"export let sublistChanged: sublistChanged = (context: sublistChangedContext) => {}"
-		],
+		]
 	},
 	"ClientScript NetSuite - JavaScript": {
 		"scope": "javascript",
@@ -207,20 +211,20 @@
 			"    function sublistChanged(context) {}",
 			"",
 			"    return {",
-			"        pageInit: pageInit,",
-			"        saveRecord: saveRecord,",
-			"        validateField: validateField,",
-			"        fieldChanged: fieldChanged,",
-			"        postSourcing: postSourcing,",
-			"        lineInit: lineInit,",
-			"        validateDelete: validateDelete,",
-			"        validateInsert: validateInsert,",
-			"        validateLine: validateLine,",
-			"        sublistChanged: sublistChanged",
+			"        pageInit,",
+			"        saveRecord,",
+			"        validateField,",
+			"        fieldChanged,",
+			"        postSourcing,",
+			"        lineInit,",
+			"        validateDelete,",
+			"        validateInsert,",
+			"        validateLine,",
+			"        sublistChanged",
 			"    }",
 			"})",
 			""
-		],
+		]
 	},
 	"UserEvent NetSuite - TypeScript": {
 		"scope": "typescript",
@@ -258,20 +262,20 @@
 			" */",
 			"define([], function() {",
 			"",
-			"    const beforeLoad = (context) => {}",
+			"    function beforeLoad(context){}",
 			"",
-			"    const beforeSubmit = (context) => {}",
+			"    function beforeSubmit(context){}",
 			"",
-			"    const afterSubmit = (context) => {}",
+			"    function afterSubmit(context){}",
 			"",
 			"    return {",
-			"        beforeLoad: beforeLoad,",
-			"        beforeSubmit: beforeSubmit,",
-			"        afterSubmit: afterSubmit",
+			"        beforeLoad,",
+			"        beforeSubmit,",
+			"        afterSubmit",
 			"    }",
 			"})",
 			""
-		],
+		]
 	},
 	"MapReduce NetSuite - TypeScript": {
 		"scope": "typescript",
@@ -310,23 +314,23 @@
 			" */",
 			"define([], function() {",
 			"",
-			"    const getInputData = () => {}",
+			"    function getInputData(){}",
 			"",
-			"    const map = (context)  => {}",
+			"    function map(context){}",
 			"",
-			"    const reduce = (context)  => {}",
+			"    function reduce(context){}",
 			"",
-			"    const summarize = (summary)  => {}",
+			"    function summarize(summary){}",
 			"",
 			"    return {",
-			"        getInputData: getInputData,",
-			"        map: map,",
-			"        reduce: reduce,",
-			"        summarize: summarize",
+			"        getInputData,",
+			"        map,",
+			"        reduce,",
+			"        summarize",
 			"    }",
 			"})",
 			""
-		],
+		]
 	},
 	"Suitelet NetSuite - TypeScript": {
 		"scope": "typescript",
@@ -356,14 +360,14 @@
 			" */",
 			"define([], function() {",
 			"",
-			"    const onRequest = (context) => {}",
+			"    function onRequest(context){}",
 			"",
 			"    return {",
-			"        onRequest: onRequest",
+			"        onRequest",
 			"    }",
 			"})",
 			""
-		],
+		]
 	},
 	"RESTlet NetSuite - TypeScript": {
 		"scope": "typescript",
@@ -398,13 +402,13 @@
 			" */",
 			"define([], function() {",
 			"",
-			"    const _get = (context) => {}",
+			"    function _get(context){}",
 			"",
-			"    const _post = (context) => {}",
+			"    function _post(context){}",
 			"",
-			"    const _put = (context) => {}",
+			"    function _put(context){}",
 			"",
-			"    const _delete = (context) => {}",
+			"    function _delete(context){}",
 			"",
 			"    return {",
 			"        get: _get,",
@@ -414,8 +418,7 @@
 			"    }",
 			"})",
 			""
-		],
-		"description": ""
+		]
 	},
 	"Custom Script with Deploy - XML": {
 		"scope": "xml",

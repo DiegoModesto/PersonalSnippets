@@ -1,0 +1,47 @@
+{
+      "version": "2.0.0",
+      "tasks": [
+            {
+                  "label": "Typescript Compile Watch",
+                  "type": "shell",
+                  "command": "tsc --watch",
+                  "problemMatcher": [],
+                  "group": {
+                        "kind": "build",
+                        "isDefault": false
+                  },
+            },
+            {
+                  "label": "Upload JavaScript to NetSuite",
+                  "type": "shell",
+                  "command": "bash",
+                  "args": [
+                        "-c",
+                        "FILE_PATH='${relativeFile}'; CLEAN_PATH=${FILE_PATH#src/FileCabinet}; suitecloud file:upload --paths \"$CLEAN_PATH\""
+                  ],
+                  "problemMatcher": [],
+                  "group": {
+                        "kind": "build",
+                        "isDefault": false
+                  },
+                  "options": {
+                        "cwd": "${workspaceFolder}",
+                        "shell": "/bin/bash"
+                  }
+            },
+            {
+                  "label": "Upload TypeScript to NetSuite",
+                  "type": "shell",
+                  "command": "FILE_PATH='${relativeFile}'; JS_FILE=$(echo \"$FILE_PATH\" | sed 's|^src/Source|/SuiteScripts|' | sed 's|.ts$|.js|'); suitecloud file:upload --paths \"$JS_FILE\"",
+                  "problemMatcher": [],
+                  "group": {
+                        "kind": "build",
+                        "isDefault": false
+                  },
+                  "options": {
+                        "cwd": "${workspaceFolder}",
+                        "shell": "/bin/bash"
+                  }
+            }
+      ]
+}
